@@ -27,16 +27,16 @@ jobs:
         run: |
           pytest test_hello_world.py
 
-  # deploy:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   if: github.ref == 'refs/heads/main'
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-  #   steps:
-  #     - name: Checkout Code
-  #       uses: actions/checkout@v3
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-  #     - name: Deploy Application
-  #       run: |
-  #         echo "Deploying the application..."
-  #         # Add deployment commands here
+      - name: Deploy Application
+        run: |
+          echo "Deploying the application..."
+          # Add deployment commands here
